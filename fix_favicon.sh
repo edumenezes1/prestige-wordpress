@@ -1,0 +1,1 @@
+cp src/assets/prestige/prestige-icon-web.svg public/favicon.svg

@@ -1,0 +1,156 @@
+@import "@fontsource/montserrat/300.css";
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/500.css";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Montserrat", Arial, sans-serif;
+  --font-mono: "Montserrat", Arial, sans-serif;
+
+  --color-prestige-charcoal: #1b1b1b;
+  --color-prestige-gold: #e09d39;
+  --color-prestige-white: #ffffff;
+  --color-prestige-graphite: #262626;
+  --color-prestige-black: #0a0a0a;
+
+  --text-display-hero: clamp(54px, 8vw, 112px);
+  --text-display-section: clamp(42px, 5.4vw, 76px);
+  --text-title-item: clamp(24px, 2.4vw, 38px);
+  --text-body-large: clamp(18px, 1.35vw, 21px);
+  --text-body: 16px;
+  --text-label: 12px;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1b1b1b;
+}
+
+@layer base {
+  * {
+    border-color: rgba(27, 27, 27, 0.08);
+  }
+
+  html {
+    background-color: var(--background);
+    overflow-x: clip;
+  }
+
+  body {
+    overflow-x: clip;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    line-height: 1.6;
+    font-synthesis: none;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+
+  .display-hero {
+    font-size: var(--text-display-hero);
+    font-weight: 300;
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+  }
+
+  .display-section {
+    font-size: var(--text-display-section);
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
+  }
+
+  .title-item {
+    font-size: var(--text-title-item);
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  .body-large {
+    font-size: var(--text-body-large);
+    font-weight: 400;
+    line-height: 1.55;
+  }
+
+  .body {
+    font-size: var(--text-body);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .label {
+    font-size: var(--text-label);
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+}
+
+@layer utilities {
+  .container-wide {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .section-spacing {
+    padding-top: clamp(64px, 8vw, 120px);
+    padding-bottom: clamp(64px, 8vw, 120px);
+  }
+
+  section[id] {
+    scroll-margin-top: clamp(84px, 10vh, 96px);
+  }
+}
+
+:focus-visible {
+  outline: 1px solid #e09d39 !important;
+  outline-offset: 2px !important;
+  border-radius: 2px !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-delay: -1ms !important;
+    animation-duration: 1ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0s !important;
+  }
+}
+
+/* Marca d'água removida */
+#lovable-badge,
+a[href*="lovable.dev"],
+a[href*="gptengineer"],
+iframe[src*="lovable.dev"],
+div[style*="Edit with Lovable"],
+[id*="lovable-badge"],
+[class*="lovable-badge"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: -9999 !important;
+}
